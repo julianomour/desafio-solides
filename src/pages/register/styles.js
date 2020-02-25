@@ -2,18 +2,26 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  color: #332e74;
 `;
 
 export const FormLogin = styled.form`
-  margin-top: 30px;
+  background: #332e74;
+  padding: 20px;
+  border-radius: 5px 5px 0px 0px;
+  width: 300px;
+  margin: 20px auto 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  flex-direction: column;
+  strong {
+    font-size: 30px;
+  }
   input {
     flex: 1;
     border: solid 1px #eee;

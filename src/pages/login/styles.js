@@ -3,6 +3,7 @@ import office from '../../assets/img/office.jpg';
 
 export const Container = styled.div`
   display: flex;
+  color: #332e74;
 `;
 
 export const ImgLogin = styled.div`
