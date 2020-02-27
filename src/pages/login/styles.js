@@ -1,26 +1,25 @@
 import styled from 'styled-components';
-import office from '../../assets/img/office.jpg';
 
 export const Container = styled.div`
   display: flex;
-  color: #332e74;
-`;
-
-export const ImgLogin = styled.div`
-  flex: 2;
-  background: url(${office}) center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
-  opacity: 0.6;
-  order: 2;
+  color: #fff;
 `;
 
 export const DivLogin = styled.div`
-  flex: 1;
-  order: 1;
+  color: #192a56;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px 5px 0px 0px;
+  width: 300px;
+  margin: 20px auto 0;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   text-align: center;
 `;
 
@@ -41,18 +40,25 @@ export const FormLogin = styled.form`
     margin-top: 10px;
   }
   div {
-    align-items: flex-end;
+    align-items: center;
   }
 `;
 
-export const SubmitButtn = styled.button`
+export const SubmitButtn = styled.button.attrs({
+  type: 'submit'
+})`
   padding: 10px 20px;
   margin-top: 20px;
   border-radius: 5px;
   border: none;
-  color: #fff;
-  background: #27ae60;
+  color: #192a56;
+  background: #fff;
   margin-right: 5px;
+  border: solid 1px #192a56;
+  &:hover {
+    background: #192a56;
+    color: #fff;
+  }
 `;
 
 export const RegisterButton = styled.button`
@@ -60,6 +66,12 @@ export const RegisterButton = styled.button`
   margin-top: 20px;
   border-radius: 5px;
   border: none;
+  background: #192a56;
   color: #fff;
-  background: #2980b9;
+
+  &:hover {
+    color: #192a56;
+    background: #fff;
+    border: solid 1px #192a56;
+  }
 `;

@@ -6,11 +6,12 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  color: #332e74;
+  color: #fff;
 `;
 
 export const FormLogin = styled.form`
-  background: #332e74;
+  color: #192a56;
+  background: #fff;
   padding: 20px;
   border-radius: 5px 5px 0px 0px;
   width: 300px;
@@ -19,6 +20,7 @@ export const FormLogin = styled.form`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
   strong {
     font-size: 30px;
   }
@@ -29,18 +31,35 @@ export const FormLogin = styled.form`
     border-radius: 4px;
     font-size: 16px;
     width: 100%;
+    border: solid 1px #192a56;
   }
 
   > input {
     margin-top: 10px;
   }
+
+  a {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+
+    background: #192a56;
+    color: #fff;
+    border: solid 1px #192a56;
+    text-decoration: none;
+  }
 `;
 
-export const SubmitButtn = styled.button`
+export const SubmitButtn = styled.button.attrs({
+  type: 'submit'
+})`
   padding: 10px 20px;
   margin-top: 20px;
   border-radius: 5px;
   border: none;
-  color: #fff;
-  background: #27ae60;
+
+  color: #192a56;
+  background: #fff;
+  border: solid 1px #192a56;
 `;

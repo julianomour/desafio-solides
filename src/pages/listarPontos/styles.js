@@ -14,19 +14,48 @@ export const Header = styled.div`
   text-align: center;
   padding: 20px;
   margin: 10px;
-
   border-radius: 4px;
+
+  @media (max-width: 650px) {
+    width: 100%;
+  }
 `;
-export const ListPontos = styled.div`
-  table {
-    background: #332e74;
-    th,
-    tr,
-    td {
+
+export const List = styled.ul`
+  list-style: none;
+  margin-top: 30px;
+  width: 620px;
+
+  li {
+    color: #192a56;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #eee;
+    background: #fff;
+    margin: 10px 0;
+    span {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+    span.date {
       color: #fff;
+      background: #192a56;
     }
   }
-  h2 {
-    margin: 15px auto;
+
+  @media (max-width: 650px) {
+    width: 100%;
+    padding: 15px;
+    li {
+      flex-direction: column;
+      margin-bottom: 20px;
+      span {
+        border-bottom: solid 1px;
+      }
+    }
   }
 `;
