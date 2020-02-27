@@ -5,6 +5,12 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #fff;
+  height: 100vh;
+  @media (max-width: 650px) {
+    height: auto;
+    margin-top: 50px;
+  }
 `;
 
 export const Header = styled.div`
@@ -23,7 +29,6 @@ export const Header = styled.div`
 
 export const List = styled.ul`
   list-style: none;
-  margin-top: 30px;
   width: 620px;
 
   li {

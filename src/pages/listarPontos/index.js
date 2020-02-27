@@ -34,11 +34,19 @@ class registrarPonto extends Component {
   }
 
   render() {
-    const { schedules } = this.state;
+    const { schedules, name } = this.state;
     return (
       <>
         <Header />
         <Container>
+          <h1>Olá {name}</h1>
+
+          {schedules.length > 0 ? (
+            <h2>Estes são os seus pontos registrados</h2>
+          ) : (
+            <h2>Você ainda não possui registros</h2>
+          )}
+
           <List>
             {schedules.map(s => (
               <li>
