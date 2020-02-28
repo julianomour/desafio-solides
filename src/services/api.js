@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const token = sessionStorage.getItem('token');
 const api = axios.create({
-  baseURL: 'http://localhost:3333',
+  baseURL: 'https://solides-back.herokuapp.com/',
 
   contentType: 'application/json',
   Authorization: `Bearer ${token}`
