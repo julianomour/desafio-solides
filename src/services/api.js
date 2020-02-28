@@ -1,8 +1,7 @@
 import axios from 'axios';
-import 'dotenv/config';
 
 const api = axios.create({
-  baseURL: process.env.APIURL,
+  baseURL: 'https://solides-back.herokuapp.com',
   contentType: 'application/json'
 });
 export default api;
