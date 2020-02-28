@@ -51,23 +51,27 @@ class registrarPonto extends Component {
             {schedules.map(s => (
               <li>
                 <span className="date">
-                  {format(parseISO(s.createdAt), 'dd-MM-yyyy')}
-                </span>
-                <span>
-                  <MdComputer size={22} />{' '}
-                  {format(parseISO(s.start_day), 'HH:mm:ss')}
-                </span>
-                <span>
-                  <MdLocalDining size={22} />{' '}
-                  {format(parseISO(s.start_lunch), 'HH:mm:ss')}
+                  {s.createdAt
+                    ? format(parseISO(s.createdAt), 'dd-MM-yyyy')
+                    : ''}
                 </span>
                 <span>
                   <MdComputer size={22} />
-                  {format(parseISO(s.end_lunch), 'HH:mm:ss')}
+                  {s.start_day ? format(parseISO(s.start_day), 'HH:mm:ss') : ''}
+                </span>
+                <span>
+                  <MdLocalDining size={22} />
+                  {s.start_lunch
+                    ? format(parseISO(s.start_lunch), 'HH:mm:ss')
+                    : ''}
+                </span>
+                <span>
+                  <MdComputer size={22} />
+                  {s.end_lunch ? format(parseISO(s.end_lunch), 'HH:mm:ss') : ''}
                 </span>
                 <span>
                   <MdHome size={22} />
-                  {format(parseISO(s.end_day), 'HH:mm:ss')}
+                  {s.end_day ? format(parseISO(s.end_day), 'HH:mm:ss') : ''}
                 </span>
               </li>
             ))}
