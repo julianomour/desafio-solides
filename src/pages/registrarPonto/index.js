@@ -23,7 +23,7 @@ export default class registrarPonto extends Component {
   async componentDidMount() {
     await this.setState({
       token: sessionStorage.getItem('token'),
-      name: localStorage.getItem('name')
+      name: sessionStorage.getItem('name')
     });
 
     const { token } = this.state;
@@ -61,9 +61,10 @@ export default class registrarPonto extends Component {
         start_day: response.data.hour
       });
     } catch (error) {
+      const { response } = error;
       this.setState({
         err: true,
-        msg: 'Não foi Possível registrar o ponto'
+        msg: response.data.error
       });
     }
   };
@@ -79,9 +80,10 @@ export default class registrarPonto extends Component {
         start_lunch: response.data.hour
       });
     } catch (error) {
+      const { response } = error;
       this.setState({
         err: true,
-        msg: 'Não foi Possível registrar o ponto'
+        msg: response.data.error
       });
     }
   };
@@ -97,9 +99,10 @@ export default class registrarPonto extends Component {
         end_lunch: response.data.hour
       });
     } catch (error) {
+      const { response } = error;
       this.setState({
         err: true,
-        msg: 'Não foi Possível registrar o ponto'
+        msg: response.data.error
       });
     }
   };
@@ -114,9 +117,10 @@ export default class registrarPonto extends Component {
         end_day: response.data.hour
       });
     } catch (error) {
+      const { response } = error;
       this.setState({
         err: true,
-        msg: 'Não foi Possível registrar o ponto'
+        msg: response.data.error
       });
     }
   };

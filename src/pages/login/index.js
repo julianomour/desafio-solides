@@ -28,24 +28,25 @@ class Login extends Component {
     });
   };
 
-  Login = async e => {
+  login = async e => {
     e.preventDefault();
     const { email, password } = this.state;
 
     try {
       const response = await api.post('/sessions', { email, password });
       await sessionStorage.setItem('token', response.data.token);
-      await localStorage.setItem('name', response.data.user.name);
+      await sessionStorage.setItem('name', response.data.user.name);
       this.props.history.push('/registrar-ponto');
     } catch (error) {
+      const { response } = error;
       this.setState({
         err: true,
-        msg: 'Não foi possível logar no sistema.Verifique seu e-mail e senha'
+        msg: response.data.error
       });
     }
   };
 
-  Register = async e => {
+  register = async e => {
     e.preventDefault();
     this.props.history.push('/register');
   };
@@ -71,7 +72,7 @@ class Login extends Component {
             <h1>Registro de ponto</h1>
             <h2>Login</h2>
           </div>
-          <FormLogin onSubmit={this.Login}>
+          <FormLogin onSubmit={this.login}>
             <input
               type="email"
               placeholder="exemplo@email.com"
@@ -86,7 +87,7 @@ class Login extends Component {
             />
             <div>
               <SubmitButtn>Entrar</SubmitButtn>
-              <RegisterButton onClick={this.Register}>Registrar</RegisterButton>
+              <RegisterButton onClick={this.register}>Registrar</RegisterButton>
             </div>
           </FormLogin>
           <Snackbar

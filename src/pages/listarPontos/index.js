@@ -15,7 +15,7 @@ class registrarPonto extends Component {
   async componentDidMount() {
     await this.setState({
       token: sessionStorage.getItem('token'),
-      name: localStorage.getItem('name')
+      name: sessionStorage.getItem('name')
     });
     const { token, schedules } = this.state;
 

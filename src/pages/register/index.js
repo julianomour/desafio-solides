@@ -43,20 +43,20 @@ export default class Register extends Component {
     });
   };
 
-  Register = async e => {
+  register = async e => {
     e.preventDefault();
 
     try {
       const { name, email, password } = this.state;
       const response = await api.post('/users', { name, email, password });
       await sessionStorage.setItem('token', response.data.token);
-      localStorage.setItem('name', response.data.user.name);
+      sessionStorage.setItem('name', response.data.user.name);
       this.props.history.push('/registrar-ponto');
     } catch (error) {
+      const { response } = error;
       this.setState({
         err: true,
-        msg:
-          'Não foi possível realizar o cadastro no sistema.Verifique as informações'
+        msg: response.data.error
       });
     }
   };
@@ -68,7 +68,7 @@ export default class Register extends Component {
         <div>
           <h1>Realizar Cadastro</h1>
         </div>
-        <FormLogin onSubmit={this.Register}>
+        <FormLogin onSubmit={this.register}>
           <input
             type="text"
             placeholder="Nome"

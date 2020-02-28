@@ -49,6 +49,9 @@ export const List = styled.ul`
     span.date {
       color: #fff;
       background: #192a56;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 

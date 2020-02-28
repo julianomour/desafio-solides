@@ -1,10 +1,8 @@
 import axios from 'axios';
+import 'dotenv/config';
 
-const token = sessionStorage.getItem('token');
 const api = axios.create({
-  baseURL: 'https://solides-back.herokuapp.com/',
-
-  contentType: 'application/json',
-  Authorization: `Bearer ${token}`
+  baseURL: process.env.APIURL,
+  contentType: 'application/json'
 });
 export default api;
